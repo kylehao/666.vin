@@ -1,8 +1,8 @@
-<!DOCTYPE HTML>
+﻿<!DOCTYPE HTML>
 <html lang="en-US">
 <head>
-	<meta charset="gb2312">
-	<title>��Ƕ��ͼƬ��ƵjQueryȫ������</title>
+	<meta charset="utf-8">
+	<title>可嵌入图片视频jQuery全屏滑块</title>
 	<link rel="stylesheet" href="css/nex.min.css" />
 
 <link rel="stylesheet" type="text/css" href="css/normalize.css" />
@@ -20,13 +20,13 @@
 </style>
 <link rel="shortcut icon" type="image/x-icon" href="img/an.ico"/>
 		<style type="text/css">
-			/*��ʽ��ʼ��*/
+			/*样式初始化*/
 			* {
 				margin: 0;
 				padding: 0;
 				list-style: none;
 			}
-			/*ȥ�����������*/
+			/*去除横向滚动条*/
 			body {
 				overflow-x: hidden;
 				overflow-y: hidden;
@@ -34,7 +34,7 @@
 				font-size:13px;
 				color: #ffffff;
 			}
-			/*��div������������*/
+			/*将div铺满整个窗口*/
 			.box {
 				height: 100vh;
 				min-height: 520px;
@@ -44,14 +44,14 @@
 				flex-direction: column;
 background-color: 000;
 			}
-			/*���ô�ul�Ĵ�С����λ*/
+			/*设置大ul的大小及定位*/
 			.content {
 				position: relative;
 				width: 100%;
 				height: 100%;
 background-color: 000;
 			}
-			/*���ô�li��ʽ*/
+			/*设置大li样式*/
 			.content li {
 				position: absolute;
 				top: 0;
@@ -72,20 +72,20 @@ background-color: 000;
 			<div class="menu-wrap">
 				<nav class="menu">
 					<div class="icon-list" >
-						<a href="../../"><i class="fa fa-fw fa-star-o"></i><span>���״����ζ���Ч</span></a>
-						<a href="../../index/omdp/"><i class="fa fa-fw fa-bell-o"></i><span>ŷ����Ƭ�õ�Ƭ��Ч</span></a>
-						<a href="../../index/flower/"><i class="fa fa-fw fa-envelope-o"></i><span>ҹ������������Ч</span></a>
-						<a href="../../index/xzshdp/"><i class="fa fa-fw fa-comment-o"></i><span>��תʽ�л��õ�Ƭ</span></a>
-						<a href="../../index/fwin/"><i class="fa fa-fw fa-newspaper-o"></i><span>��Windows�������</span></a>
-						<a href="../../index/hlb/"><i class="fa fa-fw fa-star-o"></i><span>���ܲ���ͨ������Ч</span></a>
-						<a href="../../index/360/"><i class="fa fa-fw fa-bell-o"></i><span>360����ת������Ч</span></a>
-						<a href="../../index/4ji/"><i class="fa fa-fw fa-newspaper-o"></i><span>�ļ������任��Ч</span></a>
-						<a href="../../index/qiu/"><i class="fa fa-fw fa-star-o"></i><span>Բ��ײ��������Ч</span></a>
-						<a href="../../index/meihua/"><i class="fa fa-fw fa-bell-o"></i><span>÷��ʢ����Ч</span></a>
-						<a href="../../index/huakuai/"><i class="fa fa-fw fa-newspaper-o"></i><span>Ƕ����Ƶȫ������</span></a>
-						<a href="../../index/dongman/"><i class="fa fa-fw fa-newspaper-o"></i><span>ȫ���ֲ��л�������Ч</span></a>
-						<a href="../../index/xiala/"><i class="fa fa-fw fa-newspaper-o"></i><span>�����ı䱳��ͼƬ��Ч</span></a>
-						<a href="../../index/game/"><i class="fa fa-fw fa-bell-o"></i><span>html5��վ��Ϸ</span></a>
+						<a href="../../"><i class="fa fa-fw fa-star-o"></i><span>海底大鱼游动特效</span></a>
+						<a href="../../index/omdp/"><i class="fa fa-fw fa-bell-o"></i><span>欧美大片幻灯片特效</span></a>
+						<a href="../../index/flower/"><i class="fa fa-fw fa-envelope-o"></i><span>夜晚花朵绽放特效</span></a>
+						<a href="../../index/xzshdp/"><i class="fa fa-fw fa-comment-o"></i><span>旋转式切换幻灯片</span></a>
+						<a href="../../index/fwin/"><i class="fa fa-fw fa-newspaper-o"></i><span>仿Windows桌面代码</span></a>
+						<a href="../../index/hlb/"><i class="fa fa-fw fa-star-o"></i><span>胡萝卜卡通背景特效</span></a>
+						<a href="../../index/360/"><i class="fa fa-fw fa-bell-o"></i><span>360度旋转场景特效</span></a>
+						<a href="../../index/4ji/"><i class="fa fa-fw fa-newspaper-o"></i><span>四季场景变换特效</span></a>
+						<a href="../../index/qiu/"><i class="fa fa-fw fa-star-o"></i><span>圆球撞击动画特效</span></a>
+						<a href="../../index/meihua/"><i class="fa fa-fw fa-bell-o"></i><span>梅花盛开特效</span></a>
+						<a href="../../index/huakuai/"><i class="fa fa-fw fa-newspaper-o"></i><span>嵌入视频全屏滑块</span></a>
+						<a href="../../index/dongman/"><i class="fa fa-fw fa-newspaper-o"></i><span>全屏轮播切换动漫特效</span></a>
+						<a href="../../index/xiala/"><i class="fa fa-fw fa-newspaper-o"></i><span>下拉改变背景图片特效</span></a>
+						<a href="../../index/game/"><i class="fa fa-fw fa-bell-o"></i><span>html5网站游戏</span></a>
 					
 					</div>
 				</nav>
@@ -101,10 +101,10 @@ background-color: 000;
 	
 					
 
-<!-- ���� ��ʼ -->
+<!-- 代码 开始 -->
 <div class="fish" style="position:absolute; width:250px; height:500px; z-index:2; left: 20px; top: 50px;backgroud-color:000;">
 <table>
-	<!-- ��1�� -->
+	<!-- 第1行 -->
     <tr>
      <td width="40"></td>
      <td align="center" width="60"><a href="http://cloud.2345.ltd/" target="_blank"><img name="folder" src="https://code.aliyun.com/free163/publiclib/raw/0bb5e4aec8d0bdd1a4ebcda03491b9b8a3115e28/desktop_computer/folder.gif" width="50" height="50" border="0" id="index_r2_c2" alt="" /></a></td>
@@ -116,18 +116,18 @@ background-color: 000;
     </tr>
     <tr>
      <td width="40"></td>
-     <td align="center" width="60">�ҵ��ĵ�</td>
+     <td align="center" width="60">我的文档</td>
      <td width="20"></td>
-     <td align="center" width="60">�ҵ����</td>
+     <td align="center" width="60">我的相册</td>
      <td width="20"></td>
-     <td align="center" width="60">��Ƶ����</td>
+     <td align="center" width="60">视频解析</td>
      
     </tr>
     <tr>
      <td>&nbsp;</td>
     </tr>
     
-<!-- ��2�� -->   
+<!-- 第2行 -->   
     <tr>
      <td width="40"></td>
      <td align="center" width="60"><a href="http://pan.2345.ltd/" target="_blank"><img name="computer" src="https://code.aliyun.com/free163/publiclib/raw/0bb5e4aec8d0bdd1a4ebcda03491b9b8a3115e28/desktop_computer/computer.gif" width="50" height="50" border="0" id="index_r5_c2" alt="" /></a></td>
@@ -139,18 +139,18 @@ background-color: 000;
     </tr>
     <tr>
      <td width="40"></td>
-     <td align="center" width="60">�ҵĵ���</td>
+     <td align="center" width="60">我的电脑</td>
      <td width="20"></td>
-     <td align="center" width="60">�ŵ�ʫ��</td>
+     <td align="center" width="60">古典诗词</td>
      <td width="20"></td>
-     <td align="center" width="60">��������</td>
+     <td align="center" width="60">在线音乐</td>
      
     </tr>
     <tr>
      <td>&nbsp;</td>
     </tr>
     
-<!-- ��3�� -->
+<!-- 第3行 -->
     <tr>
      <td width="40"></td>
      <td align="center" width="60"><a href="http://www.book.ga" target="_blank"><img name="wuxia" src="https://code.aliyun.com/free163/publiclib/raw/0bb5e4aec8d0bdd1a4ebcda03491b9b8a3115e28/desktop_computer/wuxia.gif" width="50" height="50" border="0" id="index_r8_c6" alt="" /></a></td>
@@ -162,18 +162,18 @@ background-color: 000;
     </tr>
     <tr>
      <td width="40"></td>
-     <td align="center" width="60">����С˵</td>
+     <td align="center" width="60">武侠小说</td>
      <td width="20"></td>
-     <td align="center" width="60">���ɸ�</td>
+     <td align="center" width="60">听松阁</td>
      <td width="20"></td>
-     <td align="center" width="60">��������</td>
+     <td align="center" width="60">阿里云盘</td>
      
     </tr>
     <tr>
      <td>&nbsp;</td>
     </tr>
     
-<!-- ��4�� -->
+<!-- 第4行 -->
     <tr>
      <td width="40"></td>
      <td align="center" width="60"><a href="http://skycz.com/" target="_blank"><img name="blog" src="https://code.aliyun.com/free163/publiclib/raw/0bb5e4aec8d0bdd1a4ebcda03491b9b8a3115e28/desktop_computer/blog.gif" width="50" height="50" border="0" id="index_r11_c4" alt="" /></a></td>
@@ -185,17 +185,17 @@ background-color: 000;
     </tr>
    <tr>
    	<td width="40"></td>
-    <td align="center" width="60">�ҵĲ���</td>
+    <td align="center" width="60">我的博客</td>
     <td width="20"></td>
-    <td align="center" width="60">�ļ�����</td>
+    <td align="center" width="60">文件分享</td>
     <td width="20"></td>
-    <td align="center" width="60">������</td>
+    <td align="center" width="60">德云社</td>
     
    </tr>
    <tr>
     <td >&nbsp;</td>
    </tr>
-<!-- ��5�� -->
+<!-- 第5行 -->
     <tr>
      <td width="40"></td>
      <td align="center" width="60"><a href="http://mail.pu.cx/" target="_blank"><img name="mail" src="https://code.aliyun.com/free163/publiclib/raw/0bb5e4aec8d0bdd1a4ebcda03491b9b8a3115e28/desktop_computer/mail.gif" width="50" height="50" border="0" id="index_r11_c4" alt="" /></a></td>
@@ -207,9 +207,9 @@ background-color: 000;
     </tr>
    <tr>
    	<td width="40"></td>
-    <td align="center" width="60">�ҵ��ʾ�</td>
+    <td align="center" width="60">我的邮局</td>
     <td width="20"></td>
-    <td align="center" width="60">�ҵ��ױ�</td>
+    <td align="center" width="60">我的米表</td>
     <td width="20"></td>
     <td align="center" width="60"></td>
     
@@ -225,7 +225,7 @@ background-color: 000;
 
 
 
-<!-- �ײ��Ͱ�ť -->
+<!-- 底部和按钮 -->
 <div class="fish" style="position:absolute; width:1365; height:39; z-index:6; left: 0px; bottom: -3px;backgroud-color:000;">
 <img src="https://code.aliyun.com/free163/publiclib/raw/0bb5e4aec8d0bdd1a4ebcda03491b9b8a3115e28/desktop_images/bottom.jpg" width="1366" height="39" border="0" alt="">
 
@@ -255,7 +255,7 @@ background-color: 000;
 
 
 </div>
-<!-- ���� ���� -->
+<!-- 代码 结束 -->
 
 
 </div>
